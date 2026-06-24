@@ -1,5 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://www.drchrysachatzimeon.gr/sitemap.xml
+Sitemap: https://www.drchrysaXatzisymeon.gr/sitemap.xml

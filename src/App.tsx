@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import {
   ArrowUpRight,
   CalendarDays,
@@ -206,9 +206,9 @@ export default function App() {
 
       <section id="Γιατρός" className="bg-[#fbf4ed] px-5 py-24 sm:px-8 lg:px-12">
         <div className="mx-auto grid max-w-[1500px] gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
-          <img loading="lazy" src="/chrysa-doctor.webp" alt="Χρύσα Χατζημεών" className="h-[260px] md:h-[540px] lg:h-[720px] w-full rounded-[2.4rem] object-cover object-[50%_20%]" />
+          <img loading="lazy" src="/chrysa-doctor.webp" alt="Χρύσα Χατζησυμεών" className="h-[260px] md:h-[540px] lg:h-[720px] w-full rounded-[2.4rem] object-cover object-[50%_20%]" />
           <div>
-            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.24em] text-[#7e6f67]">Χρύσα Χατζημεών</p>
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.24em] text-[#7e6f67]">Χρύσα Χατζησυμεών</p>
             <h2 className="text-[12vw] font-extralight uppercase leading-[0.95] tracking-[-0.07em] sm:text-[7vw] lg:text-[5.8rem]">
               Η φροντίδα ξεκινά πριν καθίσετε στην καρέκλα
             </h2>
@@ -344,7 +344,7 @@ export default function App() {
 
       <footer className="bg-[#2d2d2d] py-8 text-center text-xs uppercase tracking-widest text-white/40 border-t border-white/5">
         <div className="mx-auto max-w-[1500px] px-5 flex flex-col gap-4 sm:flex-row sm:justify-between items-center">
-          <p>© {new Date().getFullYear()} Dr. Chrysa Chatzimeon. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dr. Chrysa Xatzisymeon. All rights reserved.</p>
           <div className="flex gap-5">
             <button
               onClick={() => setShowCookies(true)}
@@ -416,11 +416,11 @@ export default function App() {
             <div className="space-y-4 text-sm leading-relaxed text-[#5c5c5c]">
               <p><strong>Τελευταία ενημέρωση: 24 Ιουνίου 2026</strong></p>
               <p>
-                Στο οδοντιατρείο της <strong>Dr. Χρύσας Χατζημεών</strong>, σεβόμαστε το απόρρητο των δεδομένων σας. Η παρούσα Πολιτική Απορρήτου εξηγεί πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τις προσωπικές σας πληροφορίες σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR).
+                Στο οδοντιατρείο της <strong>Dr. Χρύσας Χατζησυμεών</strong>, σεβόμαστε το απόρρητο των δεδομένων σας. Η παρούσα Πολιτική Απορρήτου εξηγεί πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τις προσωπικές σας πληροφορίες σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR).
               </p>
               <h3 className="text-base font-semibold text-[#2d2d2d] mt-4">1. Υπεύθυνος Επεξεργασίας</h3>
               <p>
-                Υπεύθυνος επεξεργασίας των δεδομένων σας είναι η Dr. Χρύσα Χατζημεών, με έδρα τη Γυθείου 22, Χαλάνδρι. Τηλέφωνο επικοινωνίας: 210 711 7021.
+                Υπεύθυνος επεξεργασίας των δεδομένων σας είναι η Dr. Χρύσα Χατζησυμεών, με έδρα τη Γυθείου 22, Χαλάνδρι. Τηλέφωνο επικοινωνίας: 210 711 7021.
               </p>
               <h3 className="text-base font-semibold text-[#2d2d2d] mt-4">2. Νομική Βάση Επεξεργασίας</h3>
               <p>
@@ -474,7 +474,7 @@ export default function App() {
               </p>
               <h3 className="text-base font-semibold text-[#2d2d2d] mt-4">1. Γενικές Πληροφορίες</h3>
               <p>
-                Ο ιστότοπος λειτουργεί από το οδοντιατρείο της Dr. Χρύσας Χατζημεών, Γυθείου 22, Χαλάνδρι, Αττική. Σκοπός του είναι η παροχή πληροφοριών σχετικά με τις οδοντιατρικές υπηρεσίες μας και η διευκόλυνση επικοινωνίας.
+                Ο ιστότοπος λειτουργεί από το οδοντιατρείο της Dr. Χρύσας Χατζησυμεών, Γυθείου 22, Χαλάνδρι, Αττική. Σκοπός του είναι η παροχή πληροφοριών σχετικά με τις οδοντιατρικές υπηρεσίες μας και η διευκόλυνση επικοινωνίας.
               </p>
               <h3 className="text-base font-semibold text-[#2d2d2d] mt-4">2. Πνευματική Ιδιοκτησία</h3>
               <p>
