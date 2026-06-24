@@ -211,14 +211,14 @@
       <div class="wrap">
         <div class="split-head"><h2>Υπηρεσίες</h2><a class="outline" href="#appointment">Ραντεβού ↗</a></div>
         <div class="services-list">
-          <a class="service" href="#appointment"><small>01</small><strong>Προληπτικός έλεγχος</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>02</small><strong>Καθαρισμός δοντιών</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>03</small><strong>Αισθητική οδοντιατρική</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>04</small><strong>Λεύκανση</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>05</small><strong>Σφραγίσματα</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>06</small><strong>Παιδοδοντιατρική φροντίδα</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>07</small><strong>Επείγοντα περιστατικά</strong><span>↗</span></a>
-          <a class="service" href="#appointment"><small>08</small><strong>Σχέδιο θεραπείας</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(0)"><small>01</small><strong>Προληπτικός έλεγχος</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(1)"><small>02</small><strong>Καθαρισμός δοντιών</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(2)"><small>03</small><strong>Αισθητική οδοντιατρική</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(3)"><small>04</small><strong>Λεύκανση</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(4)"><small>05</small><strong>Σφραγίσματα</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(5)"><small>06</small><strong>Παιδοδοντιατρική φροντίδα</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(6)"><small>07</small><strong>Επείγοντα περιστατικά</strong><span>↗</span></a>
+          <a class="service" href="javascript:void(0)" onclick="openService(7)"><small>08</small><strong>Σχέδιο θεραπείας</strong><span>↗</span></a>
         </div>
       </div>
     </section>
@@ -319,6 +319,25 @@
       </div>
     </div>
 
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="modal-overlay" onclick="if(event.target===this)closeService()">
+      <div class="modal-card" style="max-width:720px">
+        <button class="modal-close" onclick="closeService()">×</button>
+        <p id="svcNumber" style="color:#7e6f67;font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;margin:0 0 8px"></p>
+        <h2 id="svcTitle" style="margin:0 0 16px;font-size:36px;letter-spacing:-.04em"></h2>
+        <p id="svcDesc" style="font-size:16px;line-height:1.8;color:#5c5c5c;margin:0 0 28px"></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px" id="svcFeatures"></div>
+        <div style="display:flex;gap:16px;align-items:center;padding:20px 24px;background:#f3fbff;border-radius:20px;margin-bottom:28px">
+          <span style="font-size:24px" id="svcIcon"></span>
+          <div>
+            <p style="margin:0;font-size:13px;color:#7e6f67;font-weight:600" id="svcDurationLabel"></p>
+            <p style="margin:4px 0 0;font-size:15px;color:#2d2d2d" id="svcDurationValue"></p>
+          </div>
+        </div>
+        <a href="#appointment" onclick="closeService()" style="display:block;text-align:center;padding:16px;background:#2d2d2d;color:white;border-radius:999px;text-decoration:none;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.16em">Κλείσε ραντεβού ↗</a>
+      </div>
+    </div>
+
     <div id="privacyModal" class="modal-overlay" onclick="closePrivacyOverlay(event)">
       <div class="modal-card">
         <button class="modal-close" onclick="closePrivacy()">×</button>
@@ -372,6 +391,85 @@
         if (event.target === document.getElementById('privacyModal')) {
           closePrivacy();
         }
+      }
+
+      // ===== SERVICE DETAIL PAGES =====
+      const SERVICES = [
+        {
+          title: 'Προληπτικός έλεγχος',
+          desc: 'Ο τακτικός οδοντιατρικός έλεγχος είναι η βάση για ένα υγιές στόμα. Εξετάζουμε δόντια, ούλα και μαλακούς ιστούς, εντοπίζοντας πιθανά προβλήματα πριν εξελιχθούν. Χρησιμοποιούμε ψηφιακή ακτινογραφία χαμηλής ακτινοβολίας για πλήρη εικόνα.',
+          features: ['Κλινική εξέταση στόματος', 'Ψηφιακή ακτινογραφία', 'Έλεγχος ούλων & περιοδοντίου', 'Πρώιμη ανίχνευση τερηδόνας', 'Αξιολόγηση σύγκλεισης', 'Εξατομικευμένο πλάνο φροντίδας'],
+          icon: '🔍', durationLabel: 'Διάρκεια επίσκεψης', durationValue: 'Περίπου 30-45 λεπτά'
+        },
+        {
+          title: 'Καθαρισμός δοντιών',
+          desc: 'Ο επαγγελματικός καθαρισμός αφαιρεί πλάκα, πέτρα και χρωστικές που δεν φεύγουν με το βούρτσισμα. Χρησιμοποιούμε υπερήχους και ειδικά εργαλεία για ήπιο αλλά αποτελεσματικό αποτέλεσμα, ακολουθούμενο από στίλβωση.',
+          features: ['Αφαίρεση τρυγίας & πλάκας', 'Καθαρισμός με υπερήχους', 'Στίλβωση δοντιών', 'Οδηγίες στοματικής υγιεινής', 'Έλεγχος ούλων', 'Εφαρμογή φθορίου (κατόπιν ένδειξης)'],
+          icon: '✨', durationLabel: 'Διάρκεια επίσκεψης', durationValue: 'Περίπου 40-60 λεπτά'
+        },
+        {
+          title: 'Αισθητική οδοντιατρική',
+          desc: 'Αποκαθιστούμε τη φυσική ομορφιά του χαμόγελού σας με σύγχρονες τεχνικές. Από σύνθετες ρητίνες και όψεις πορσελάνης μέχρι αναμόρφωση χαμόγελου — κάθε θεραπεία σχεδιάζεται γύρω από το πρόσωπο και τις ανάγκες σας.',
+          features: ['Σύνθετες ρητίνες (bonding)', 'Όψεις πορσελάνης (veneers)', 'Κεραμικές στεφάνες', 'Αναμόρφωση χαμόγελου (smile design)', 'Κλείσιμο διαστημάτων', 'Αποκατάσταση σπασμένων δοντιών'],
+          icon: '💎', durationLabel: 'Διάρκεια θεραπείας', durationValue: '1-3 επισκέψεις ανάλογα τη θεραπεία'
+        },
+        {
+          title: 'Λεύκανση',
+          desc: 'Επαγγελματική λεύκανση δοντιών με ασφαλή υλικά και ελεγχόμενη διαδικασία. Επιτυγχάνουμε φυσικό, λαμπερό αποτέλεσμα χωρίς ευαισθησία. Πριν ξεκινήσουμε, αξιολογούμε την κατάσταση των δοντιών για βέλτιστο αποτέλεσμα.',
+          features: ['Λεύκανση στο ιατρείο', 'Λεύκανση στο σπίτι με νάρθηκες', 'Αξιολόγηση χρώματος πριν & μετά', 'Ασφαλή, πιστοποιημένα υλικά', 'Ελαχιστοποίηση ευαισθησίας', 'Φυσικό αποτέλεσμα'],
+          icon: '🦷', durationLabel: 'Διάρκεια θεραπείας', durationValue: '60-90 λεπτά (στο ιατρείο)'
+        },
+        {
+          title: 'Σφραγίσματα',
+          desc: 'Αποκαθιστούμε δόντια που έχουν πληγεί από τερηδόνα με σύγχρονα αισθητικά υλικά. Χρησιμοποιούμε σύνθετες ρητίνες που ταιριάζουν απόλυτα με το χρώμα των δοντιών σας, εξασφαλίζοντας αντοχή και φυσική εμφάνιση.',
+          features: ['Αφαίρεση τερηδόνας', 'Αισθητικά σφραγίσματα (λευκά)', 'Αντικατάσταση παλαιών αμαλγαμάτων', 'Ένθετα & επένθετα κεραμικά', 'Σύγχρονα βιοσυμβατά υλικά', 'Ελάχιστη αφαίρεση υγιούς ιστού'],
+          icon: '🛡️', durationLabel: 'Διάρκεια επίσκεψης', durationValue: 'Περίπου 30-60 λεπτά ανά δόντι'
+        },
+        {
+          title: 'Παιδοδοντιατρική φροντίδα',
+          desc: 'Δημιουργούμε μια θετική πρώτη εμπειρία για τα παιδιά. Με ήρεμο περιβάλλον, απλή γλώσσα και υπομονή, βοηθάμε τα μικρά μας ασθενή να εξοικειωθούν με τον οδοντίατρο και να φροντίζουν τα δόντια τους από νωρίς.',
+          features: ['Εξέταση νεογιλών & μόνιμων δοντιών', 'Προληπτικά σφραγίσματα οπών', 'Εφαρμογή φθορίου', 'Εκπαίδευση στοματικής υγιεινής', 'Ήπια αντιμετώπιση & ψυχολογική προσέγγιση', 'Παρακολούθηση ανάπτυξης'],
+          icon: '👶', durationLabel: 'Ηλικία', durationValue: 'Από 2 ετών — πρώτη επίσκεψη μέχρι 3 ετών'
+        },
+        {
+          title: 'Επείγοντα περιστατικά',
+          desc: 'Πόνος, πρήξιμο, σπασμένο δόντι ή τραυματισμός; Αντιμετωπίζουμε επείγοντα οδοντιατρικά περιστατικά με προτεραιότητα. Επικοινωνήστε μαζί μας για να σας δεχτούμε το συντομότερο δυνατό.',
+          features: ['Οξύ οδοντιατρικό άλγος', 'Σπάσιμο ή απώλεια δοντιού', 'Πρήξιμο & απόστημα', 'Αποκόλληση στεφάνης ή σφραγίσματος', 'Τραυματισμός στόματος', 'Επείγουσα φαρμακευτική αγωγή'],
+          icon: '🚨', durationLabel: 'Διαθεσιμότητα', durationValue: 'Αυθημερόν — καλέστε 210 711 7021'
+        },
+        {
+          title: 'Σχέδιο θεραπείας',
+          desc: 'Σχεδιάζουμε μαζί ένα ολοκληρωμένο πλάνο αποκατάστασης, βήμα-βήμα. Εξηγούμε κάθε θεραπεία, τη σειρά προτεραιότητας, το κόστος και τον χρόνο που απαιτείται. Χωρίς εκπλήξεις, με πλήρη διαφάνεια.',
+          features: ['Πλήρης κλινική αξιολόγηση', 'Ψηφιακή ακτινογραφία & φωτογράφιση', 'Καταγραφή αναγκών ανά δόντι', 'Σειρά προτεραιότητας θεραπειών', 'Αναλυτικό κοστολόγιο', 'Δυνατότητα σταδιακής θεραπείας'],
+          icon: '📋', durationLabel: 'Διάρκεια επίσκεψης', durationValue: 'Περίπου 45-60 λεπτά'
+        }
+      ];
+
+      function openService(index) {
+        const s = SERVICES[index];
+        document.getElementById('svcNumber').textContent = 'Υπηρεσία ' + String(index + 1).padStart(2, '0');
+        document.getElementById('svcTitle').textContent = s.title;
+        document.getElementById('svcDesc').textContent = s.desc;
+        document.getElementById('svcIcon').textContent = s.icon;
+        document.getElementById('svcDurationLabel').textContent = s.durationLabel;
+        document.getElementById('svcDurationValue').textContent = s.durationValue;
+
+        const featContainer = document.getElementById('svcFeatures');
+        featContainer.innerHTML = '';
+        s.features.forEach(f => {
+          const item = document.createElement('div');
+          item.style.cssText = 'display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#2d2d2d';
+          item.innerHTML = '<span style="color:#8cc7de;font-size:16px;line-height:1.4">✓</span><span>' + f + '</span>';
+          featContainer.appendChild(item);
+        });
+
+        document.getElementById('serviceModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeService() {
+        document.getElementById('serviceModal').classList.remove('active');
+        document.body.style.overflow = '';
       }
 
       // ===== CALENDAR BOOKING SYSTEM =====
